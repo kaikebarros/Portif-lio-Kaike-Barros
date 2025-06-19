@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portifólio</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+
+        <img src="/img/470725024_1152606489529379_8266921268865121888_n.jpg" alt="foto de Kaike Barros"
+            class="foto-perfil" />
+        <h1>Kaike Barros</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front End</p>
+
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Meu nome é Kaike Barros, tenho 20 anos e estou em transição de carreira para a área de Desenvolvimento Front-End. Após um ano atuando na área de saneamento, descobri que tinha um interesse maior por tecnologia uma área que desperta minha criatividade e meu poder de resolução de problemas.
+
+Atualmente, sou aluno da instituição de ensino superior Anhanguera, onde curso Análise e Desenvolvimento de Sistemas, e também realizo frequentemente cursos online, nos quais estou me capacitando em diversas tecnologias e fundamentos, como:
+
+Lógica de programação
+
+HTML5, CSS3 e JavaScript
+
+Tenho como objetivo iniciar minha carreira como desenvolvedor em ambientes que valorizem o aprendizado contínuo, o trabalho colaborativo e a construção de soluções que gerem um impacto real.
+
+Tenho interesse em projetos de Front-End e estou aberto a oportunidades em startups, empresas de tecnologia ou outras organizações que compartilhem da mesma paixão por desenvolvimento Front-End.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="/img/Captura de tela 2025-05-01 101905.png" alt="Projeto 1 " class="projetos-imagem" />
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-ptojetos">Loja de camisas de time</h3>
+                    <p class="paragrafo-projetos">Camisas de times de futebol para todos os estilos e times favoritos
+                    </p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="/img/Captura de tela 2025-05-19 193518.png" alt="Projeto 2 " class="projetos-imagem" />
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-ptojetos">Green Tech</h3>
+                    <p class="paragrafo-projetos">Tecnologia sustentável</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="/img/Captura de tela 2025-05-13 192611.png" alt="Projeto 3 " class="projetos-imagem" />
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-ptojetos">Convert Money</h3>
+                    <p class="paragrafo-projetos">Conversor de moedas</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="img/Captura de tela 2025-06-04 172717.png" alt="Projeto 4 " class="projetos-imagem" />
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-ptojetos">Starbucks</h3>
+                    <p class="paragrafo-projetos">Site Starbucks para portifolio</p>
+                </div>
+            </div>
+
+                 <div class="projetos-card">
+                <img src="img/Captura de tela 2025-06-04 173033.png" alt="Projeto 5 " class="projetos-imagem" />
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-ptojetos">Bike</h3>
+                    <p class="paragrafo-projetos">Site para vendas de bicibletas elétricas</p>
+                </div>
+            </div>
+
+              <div class="projetos-card">
+                <img src="img/Captura de tela 2025-06-18 222232.png" alt="Projeto 4 " class="projetos-imagem" />
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-ptojetos">Mouse</h3>
+                <p class="paragrafo-projetos">Demonstração de mouse, botões mouse com interação e mudança de visual da página</p>
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows=6 id="mensagem"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+    </section>
+
+
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5533998280828';
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgformatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgformatada}`
+
+            window.open(url, '_blank')
+
+        }
+
+    </script>
+</body>
+
+</html>
